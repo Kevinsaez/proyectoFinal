@@ -1,0 +1,30 @@
+*{
+    font-family: 'Raleway', sans-serif;
+}
+.principal-search{
+    height: 100vh;
+   
+}
+
+.container-header {
+    background-color: #ffffffe6;
+    height: 600px;
+    width: 600px;
+}
+h1 {
+    color: #344d67;
+    font-weight: 500;
+}
+p {
+   margin-top: 0;
+   margin-bottom: 1rem;
+}
+.botones {
+    background-color: #344d67!important;
+}
+a {
+    color: #6eccaf!important;
+}
+h2, p {
+    color: #344d67;
+}
