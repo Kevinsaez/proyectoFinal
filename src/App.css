@@ -1,5 +1,14 @@
 /* poner fondo aca */
+* {
+  font-family: Raleway,sans-serif;
+ }
+ 
+ a{
+    color: #6eccaf!important;
+}
+
 body{
   background-image: url(./fondos/rickymorty.jpg);
+  background-attachment: fixed;
   background-size:cover;
 }

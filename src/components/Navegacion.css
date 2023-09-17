@@ -1,0 +1,20 @@
+header{
+    padding: 20px;
+    position: sticky;
+    z-index: 1;
+}
+.bg-blue {
+    background-color: #344d67;
+}
+h1{
+    padding: 40px 80px!important;
+}
+.navbar-brand{
+    color: #6eccaf;
+}
+.navbar-toggler {
+    border: none;
+}
+.btn-burger{
+    color: #6eccaf!important;
+}
