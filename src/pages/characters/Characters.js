@@ -35,7 +35,7 @@ export default function Characters() {
        <p>Aca iran los filtros</p>
       </section>
    
-      <section className='container justify-content-center align-item-center d-flex flex-wrap gap-5'>
+      <section className=''>
         {personaje.map((personaje)=>{
           return <Card key={personaje.id} data={personaje}/>
         })}
