@@ -1,17 +1,16 @@
 import './Card.css';
-import Infocard from '../InfoCard/infoCard';
+import InfoCard from '../InfoCard/infoCard.js';
 
-export default function Card({nombre,imagen}) {
-
+export default function Card({data}) {
+console.log(data)
     return(
         <div className="card bg-success border mb-2 p-2 d-flex flex-row gap-5">
             <div>
-                <img src={imagen} alt="imagen-personaje..."/>
-                <h3>{nombre}</h3>
+                <img src={data.image} alt="imagen-personaje..."/>
+                <h3>{data.name}</h3>
                 <button>Know More..</button>
-                <Infocard/>
+                <InfoCard status={data.status} especie={data.species} genero={data.gender} origen={data.origin.name}/>
             </div>
-            
         </div>
     )
 }

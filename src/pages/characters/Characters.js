@@ -13,15 +13,16 @@ export default function Characters() {
     return dato;
   }
 
-  let guardarPersonaje=async()=>{
+  
+  
+  useEffect(()=>{
+    let guardarPersonaje=async()=>{
 
     let info= await traerPersonajes();
  
     let listaPersonajes=info.results;
     setPersonaje(listaPersonajes)
   }
-  
-  useEffect(()=>{
     guardarPersonaje();
   },[])
 
@@ -34,9 +35,9 @@ export default function Characters() {
        <p>Aca iran los filtros</p>
       </section>
    
-      <section className='container justify-content-center align-item-center d-flex flex-wrap w-10 gap-5'>
+      <section className='container justify-content-center align-item-center d-flex flex-wrap gap-5'>
         {personaje.map((personaje)=>{
-          return <Card key={personaje.id} nombre={personaje.name} imagen={personaje.image}/>
+          return <Card key={personaje.id} data={personaje}/>
         })}
       </section>
     
