@@ -4,7 +4,7 @@ import '../Navegacion.css';
 export default function Nav(){
     return(
         <header className="bg-blue">
-            <nav className="navbar navbar-expand-lg w-100 bg-blue">
+            <nav className="navbar navbar-expand-lg w-100 bg-blue fixed-top">
                 <div className="container-fluid justify-content-between align-items-center">
                     <a className="text-decoration-none " href="/">
                         <h1 className=" navbar-brand cursor-p">Rick & Morty</h1>
