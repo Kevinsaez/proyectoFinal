@@ -1,9 +1,7 @@
-header{
-    padding: 20px;
-  
-}
-.bg-blue {
+
+.navbar {
     background-color: #344d67;
+    padding: 20px;
 }
 h1{
     padding: 40px 80px!important;

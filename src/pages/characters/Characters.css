@@ -1,3 +1,10 @@
 .container{
     width: fit-content;
 }
+
+header{
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    display: block;
+}
