@@ -9,16 +9,15 @@ export default function Characters() {
 
   let [filtro]=useState([{nombre:'Alive',filtro:'Character Alive'},
                           {nombre:'Dead',filtro:'Character Dead'},
-                          {nombre:'F',filtro:'Female'},
-                          {nombre:'M',filtro:'Male'},
-                          {nombre:'Unknown',filtro:'Origin Unknown'}
+                          {nombre:'Female',filtro:'Female'},
+                          {nombre:'Male',filtro:'Male'},
+                          {nombre:'unknown',filtro:'Origin Unknown'}
                         ]);
-
-
+  let [personaje,setPersonaje]=useState([]);
   
   // Personajes
 
-  let [personaje,setPersonaje]=useState([]);
+  
   let traerPersonajes=async()=>{
     let dato= await fetch('https://rickandmortyapi.com/api/character')
     .then(resp=>resp.json())
@@ -34,6 +33,18 @@ export default function Characters() {
         let resultado=personaje.filter((personaje)=>personaje.status===textoCheckbox);
         setPersonaje(resultado);
       }
+
+      if(textoCheckbox=== 'Female'||textoCheckbox==='Male'){
+        let resultado=personaje.filter((personaje)=>personaje.gender===textoCheckbox);
+        setPersonaje(resultado);
+      }
+
+      if(textoCheckbox=== 'unknown'){
+        let resultado=personaje.filter((personaje)=>personaje.origin.name===textoCheckbox);
+        setPersonaje(resultado);
+      }
+
+
     }else{
       console.log('Sacar filtro');
     
