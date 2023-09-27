@@ -5,6 +5,8 @@
 header{
     position: sticky;
     top: 0;
-    padding: 20px;
-    display: block;
+}
+.alert {
+    background-color: #6eccaf;
+    color: #344d67;
 }

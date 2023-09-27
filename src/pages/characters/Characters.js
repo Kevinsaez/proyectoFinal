@@ -2,15 +2,13 @@ import Nav from '../../components/Navegacion/Navegacion'
 import Card from '../../components/Card/Card'
 import { useState,useEffect, Fragment } from 'react';
 import Filter from '../../components/Filter/Filter';
+import '../characters/Characters.css'
 
 export default function Characters() {
   
   let [itemMenu]=useState("Characters");  
   let [listaCompleta,setListaCompleta]=useState([]);
   let [personaje,setPersonaje]=useState([]);
- 
-  
-  
   
   // Filtros
 
@@ -42,7 +40,6 @@ export default function Characters() {
       setPersonaje(listaCompleta);
       setFiltrosAplicados(filtrosRestantes);
     }
-    // filtrosAplicados.forEach((filtro)=>{filtrar(filtro)});
   }
 
 useEffect(()=>{
@@ -84,8 +81,8 @@ filtrosAplicados.forEach((textoCheckbox)=>{
       <main className='container-fluid'>
       <section className='row seccion-filtro py-5'>
         <div>
-          <h3>filtrosilters</h3>
-         <form className='d-flex m-5 flex-row align-items-center justify-content-center'>
+          <h3>Filters</h3>
+         <form className='d-flex m-5 flex-row align-items-center justify-content-center w-100'>
             {filtros.map((item)=>{
             return <Filter key={item.nombre} textFiltro={item.filtro} idFiltro={item.nombre} handlerChange={aplicarFiltros}/>
             })}
@@ -94,9 +91,15 @@ filtrosAplicados.forEach((textoCheckbox)=>{
       </section>
    
       <section className='row justify-content-center'>
-        {personaje.map((personaje)=>{
+      {personaje.length>0?
+        personaje.map((personaje)=>{
           return <Card key={personaje.id} data={personaje}/>
-        })}
+        }):
+        <div className="alert container fondo-alerta align-items-center justify-content-center w-100 d-flex gap-2" role="alert">
+          <i className="bi bi-exclamation-triangle-fill fs-5"></i>{/* icono de alerta */}
+          <p className='m-0'>Sorry! There are no characters width all those properties</p>
+        </div>
+        }
       </section>
     </main>
     </Fragment>
