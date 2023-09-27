@@ -4,20 +4,27 @@ import { useState,useEffect, Fragment } from 'react';
 import Filter from '../../components/Filter/Filter';
 
 export default function Characters() {
-
+  
+  let [itemMenu]=useState("Characters");  
+  let [listaCompleta,setListaCompleta]=useState([]);
+  let [personaje,setPersonaje]=useState([]);
+ 
+  
+  
+  
   // Filtros
 
-  let [filtro]=useState([{nombre:'Alive',filtro:'Character Alive'},
+  let [filtros]=useState([{nombre:'Alive',filtro:'Character Alive'},
                           {nombre:'Dead',filtro:'Character Dead'},
                           {nombre:'Female',filtro:'Female'},
                           {nombre:'Male',filtro:'Male'},
                           {nombre:'unknown',filtro:'Origin Unknown'}
                         ]);
-  let [personaje,setPersonaje]=useState([]);
-  
+
+ let [filtrosAplicados,setFiltrosAplicados]=useState([]);
+
   // Personajes
 
-  
   let traerPersonajes=async()=>{
     let dato= await fetch('https://rickandmortyapi.com/api/character')
     .then(resp=>resp.json())
@@ -25,57 +32,61 @@ export default function Characters() {
     return dato;
   }
 
-  let aplicarFiltros=(event)=>{
+ let aplicarFiltros=(event)=>{
     let textoCheckbox=event.target.id;
 
     if(event.target.checked===true){
-      if(textoCheckbox=== 'Alive'||textoCheckbox==='Dead'){
-        let resultado=personaje.filter((personaje)=>personaje.status===textoCheckbox);
-        setPersonaje(resultado);
-      }
-
-      if(textoCheckbox=== 'Female'||textoCheckbox==='Male'){
-        let resultado=personaje.filter((personaje)=>personaje.gender===textoCheckbox);
-        setPersonaje(resultado);
-      }
-
-      if(textoCheckbox=== 'unknown'){
-        let resultado=personaje.filter((personaje)=>personaje.origin.name===textoCheckbox);
-        setPersonaje(resultado);
-      }
-
-
+      setFiltrosAplicados([...filtrosAplicados,textoCheckbox]);
     }else{
-      console.log('Sacar filtro');
-    
+      let filtrosRestantes=filtrosAplicados.filter((el)=>el !==textoCheckbox);
+      setPersonaje(listaCompleta);
+      setFiltrosAplicados(filtrosRestantes);
+    }
+    // filtrosAplicados.forEach((filtro)=>{filtrar(filtro)});
   }
-  //  console.log(event.target.id);
-  //  console.log(event.target.checked);
-  }
-  
-  useEffect(()=>{
+
+useEffect(()=>{
     let guardarPersonaje=async()=>{
 
     let info= await traerPersonajes();
  
     let listaPersonajes=info.results;
     setPersonaje(listaPersonajes)
+    setListaCompleta(listaPersonajes);
   }
     guardarPersonaje();
   },[])
 
+useEffect(()=>{
+filtrosAplicados.forEach((textoCheckbox)=>{
+  let resultado;
+  if(textoCheckbox=== 'Alive'||textoCheckbox==='Dead'){
+    resultado=personaje.filter((personaje)=>personaje.status===textoCheckbox);
+  }
+
+  if(textoCheckbox=== 'Female'||textoCheckbox==='Male'){
+    resultado=personaje.filter((personaje)=>personaje.gender===textoCheckbox);
+  }
+
+  if(textoCheckbox=== 'unknown'){
+    resultado=personaje.filter((personaje)=>personaje.origin.name===textoCheckbox);
+  }
+  setPersonaje(resultado);
+})
+},[filtrosAplicados])
+  
   
   return (
     <Fragment>
       <header className=''>
-        <Nav/>
+        <Nav itemMenu={itemMenu}/>
       </header>
       <main className='container-fluid'>
       <section className='row seccion-filtro py-5'>
         <div>
-          <h3>Filters</h3>
+          <h3>filtrosilters</h3>
          <form className='d-flex m-5 flex-row align-items-center justify-content-center'>
-            {filtro.map((item)=>{
+            {filtros.map((item)=>{
             return <Filter key={item.nombre} textFiltro={item.filtro} idFiltro={item.nombre} handlerChange={aplicarFiltros}/>
             })}
          </form>

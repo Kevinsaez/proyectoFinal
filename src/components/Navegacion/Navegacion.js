@@ -1,7 +1,7 @@
 
 import '../Navegacion.css';
 
-export default function Nav(){
+export default function Nav({itemMenu}){
     return(
         <nav className="navbar navbar-expand-lg w-100">
             <div className="container-fluid justify-content-between align-items-center">
@@ -14,7 +14,7 @@ export default function Nav(){
                 <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul className=" navbar-nav nav-pills p-4">
                         <li className="nav-item m-2">
-                            <a className="nav-link btn-active p-2" href="/characters">Characters</a>                            </li>
+                            <a className="nav-link btn-active p-2" href="/characters">{itemMenu}</a>                            </li>
                         <li className="nav-item m-2">
                             <a className="nav-link boton p-2" href="/contact">Contact</a>
                         </li>

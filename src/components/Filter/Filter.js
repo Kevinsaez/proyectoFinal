@@ -1,5 +1,6 @@
-import { useState } from 'react';
+
 import '../../components/Filter/Filter.css'
+
 export default function Filter({textFiltro, idFiltro, handlerChange}){
     
     return(
