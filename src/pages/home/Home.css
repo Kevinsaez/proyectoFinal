@@ -20,11 +20,28 @@ p {
    margin-bottom: 1rem;
 }
 .botones {
-    background-color: #344d67!important;
+    background-color: #344d67!important;  
 }
+
+.sizeBotoes{
+    text-align: center;
+    width: 113px;
+}
+
 a {
     color: #6eccaf!important;
 }
-h2, p {
+.texto-h2,p{
     color: #344d67;
+}
+
+.botones:hover{
+    background-color:  #6eccaf!important;
+    color: #344d67!important;
+}
+
+@media (max-width: 700px){
+.container-header {
+    width: 80%;
+}
 }

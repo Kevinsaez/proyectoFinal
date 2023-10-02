@@ -3,3 +3,16 @@
     background-color: #344D67;
     color: #6ECCAF;
   }
+  .list-group-item {
+    background-color: initial!important;
+    color: #f5f5f5!important;
+    font-size: 1.2rem;
+    border: rgba(0, 0, 0, 0.125) solid;
+}
+
+.list-group{
+  width: 320px;
+}
+.name{
+  width: 300px;
+}

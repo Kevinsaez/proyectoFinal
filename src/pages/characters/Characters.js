@@ -80,7 +80,6 @@ filtrosAplicados.forEach((textoCheckbox)=>{
       </header>
       <main className='container-fluid'>
       <section className='row seccion-filtros py-5'>
-        
         <div className='filtros-area d-flex m-2 align-items-center'>
           <h3>Filters</h3>
             <a className="btn btn-filtro" data-bs-toggle="collapse" href="#collapseFiltros" role="button" aria-expanded="false" aria-controls="collapseExample">

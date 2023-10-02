@@ -1,5 +1,5 @@
 
-.navbar {
+.color-fondo {
     background-color: #344d67;
     padding: 20px;
 }
@@ -14,4 +14,13 @@ h1{
 }
 .btn-burger{
     color: #6eccaf!important;
+}
+
+.btn-active:hover {
+    background-color: #6eccaf!important; 
+    color:  #344d67!important;
+}
+.boton:hover {
+    background-color: #6eccaf!important; 
+    color:  #344d67!important;
 }

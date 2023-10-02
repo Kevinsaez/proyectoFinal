@@ -1,0 +1,11 @@
+
+.boton:hover, .botones:hover, .btn-active {
+    background-color: #6eccaf!important;
+    color: #344d67!important;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.list-group{
+    background-color: #344d67!important;
+}
