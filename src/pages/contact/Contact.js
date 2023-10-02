@@ -6,7 +6,7 @@ export default function contact(){
 
 return(
     <Fragment>
-        <Nav/>
+        <Nav itemMenu={'Characters'}/>
         <main className='w-100 vh-100 d-flex align-items-center justify-content-center'>
             <section className="bg-warning w-75 p-5 m-5">
                 <h2>Contact</h2>

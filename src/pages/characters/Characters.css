@@ -1,6 +1,10 @@
 .container{
     width: fit-content;
 }
+/* .collapse:not(.show) {
+    display: flex;
+} */
+
 
 header{
     position: sticky;
@@ -9,4 +13,38 @@ header{
 .alert {
     background-color: #6eccaf;
     color: #344d67;
+}
+
+.seccion-filtros{
+    color:#6eccaf
+}
+
+.btn{
+    color: #6eccaf;
+    background-color: #344d67;
+   
+}
+.filtros-area{
+    justify-content: start;
+}
+
+@media (max-width:800px) {
+    .seccion-filtros{
+        align-items: center;
+        flex-direction: column;
+
+    }
+    .filtros-area {
+        background-color: #344d67;
+        border-radius: 8px;
+        justify-content: space-around;
+        padding: 15px;
+        width: 90%;
+        
+    }
+    
+    .btn-filtro{
+        display:block;
+    }
+    
 }

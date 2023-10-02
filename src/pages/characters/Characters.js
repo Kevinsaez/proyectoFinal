@@ -79,14 +79,25 @@ filtrosAplicados.forEach((textoCheckbox)=>{
         <Nav itemMenu={itemMenu}/>
       </header>
       <main className='container-fluid'>
-      <section className='row seccion-filtro py-5'>
-        <div>
+      <section className='row seccion-filtros py-5'>
+        
+        <div className='filtros-area d-flex m-2 align-items-center'>
           <h3>Filters</h3>
-         <form className='d-flex m-5 flex-row align-items-center justify-content-center w-100'>
-            {filtros.map((item)=>{
-            return <Filter key={item.nombre} textFiltro={item.filtro} idFiltro={item.nombre} handlerChange={aplicarFiltros}/>
-            })}
-         </form>
+            <a className="btn btn-filtro" data-bs-toggle="collapse" href="#collapseFiltros" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <img src='filter-icon.svg' alt="icono de filtro"/>
+            </a>
+        <div/>
+
+          <div className="filtros justify-content-between flex-wrap collapse " id="collapseFiltros">
+                  <form className='d-flex m-5 flex-row align-items-center justify-content-between w-100'>
+                {filtros.map((item)=>{
+                return <Filter key={item.nombre} textFiltro={item.filtro} idFiltro={item.nombre} handlerChange={aplicarFiltros}/>
+                })}
+            </form>
+            
+          </div>
+
+        
         </div>
       </section>
    
