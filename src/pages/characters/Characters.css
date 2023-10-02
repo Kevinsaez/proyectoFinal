@@ -1,10 +1,6 @@
 .container{
     width: fit-content;
 }
-/* .collapse:not(.show) {
-    display: flex;
-} */
-
 
 header{
     position: sticky;
@@ -19,10 +15,13 @@ header{
     color:#6eccaf
 }
 
+h2, p {
+    color: #344d67;
+}
+
 .btn{
     color: #6eccaf;
     background-color: #344d67;
-   
 }
 .filtros-area{
     justify-content: start;
@@ -33,19 +32,12 @@ header{
     .seccion-filtros{
         align-items: center;
         flex-direction: column;
-
     }
     .filtros-area {
         background-color: #344d67;
         border-radius: 8px;
         justify-content: space-around;
         padding: 15px;
-        width: 90%;
-        
+        width: 90%;    
     }
-    
-    .btn-filtro{
-        display:block;
-    }
-    
 }

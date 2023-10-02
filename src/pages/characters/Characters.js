@@ -75,7 +75,7 @@ filtrosAplicados.forEach((textoCheckbox)=>{
   
   return (
     <Fragment>
-      <header className=''>
+      <header>
         <Nav itemMenu={itemMenu}/>
       </header>
       <main className='container-fluid'>
@@ -87,16 +87,14 @@ filtrosAplicados.forEach((textoCheckbox)=>{
             </a>
         <div/>
 
-          <div className="filtros justify-content-between flex-wrap collapse " id="collapseFiltros">
+          <div className="filtros justify-content-between flex-wrap collapse" id="collapseFiltros">
                   <form className='d-flex m-5 flex-row align-items-center justify-content-between w-100'>
                 {filtros.map((item)=>{
                 return <Filter key={item.nombre} textFiltro={item.filtro} idFiltro={item.nombre} handlerChange={aplicarFiltros}/>
                 })}
             </form>
-            
           </div>
 
-        
         </div>
       </section>
    
